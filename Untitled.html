@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px '.SF NS Text'; color: #e6e6e8; -webkit-text-stroke: #e6e6e8; background-color: #111113}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px '.SF NS Text'; color: #e6e6e8; -webkit-text-stroke: #e6e6e8; background-color: #111113; min-height: 15.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!doctype html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="vi"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Lịch khám bệnh thú y&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>:root{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--bg:#F6FEFF;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--card:#FFFFFF;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--accent:#2FB3A8; /* teal */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--muted:#6C7A89;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--accent-2:#FFCB77; /* warm highlight */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--danger:#E56353;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--shadow: 0 6px 18px rgba(12,25,31,0.08);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin:0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg,var(--bg),#EAF9F7);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color:#102027;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing:antialiased;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>-moz-osx-font-smoothing:grayscale;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding:28px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.container{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width:1100px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin:0 auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display:grid;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 360px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>gap:20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>align-items:start;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.card{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background:var(--card);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius:14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding:18px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow:var(--shadow);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border:1px solid rgba(16,32,39,0.03);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header.app-header{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header.app-header h1{font-size:20px;margin:0}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header.app-header p{margin:0;color:var(--muted);font-size:13px}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.calendar-top{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.month-nav{display:flex;gap:8px;align-items:center}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn{background:transparent;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn:hover{background:rgba(47,179,168,0.08)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn.primary{background:linear-gradient(90deg,var(--accent),#2DAE9F);color:white}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.month-title{font-size:18px;font-weight:700}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:8px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.weekday{font-size:12px;color:var(--muted);text-align:center}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.day{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>min-height:95px;border-radius:10px;padding:8px;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(250,255,254,0.9));border:1px solid rgba(16,32,39,0.04);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>position:relative;overflow:hidden</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.day.out{opacity:0.45}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.day .date{font-weight:700;font-size:13px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.add-small{position:absolute;right:8px;top:8px;font-size:12px;padding:6px;border-radius:6px;border:1px dashed rgba(47,179,168,0.25);background:transparent;color:var(--accent);cursor:pointer}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.appt{display:block;padding:6px 8px;margin-top:8px;border-radius:8px;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.appt.pet{background:linear-gradient(90deg,var(--accent-2),#FFD3A5);color:#3E2D07}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.appt.check{background:linear-gradient(90deg,#D5FFEE,#BFF0E6);color:#06423B}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* right column */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.right-col{position:sticky;top:28px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.small{font-size:13px;color:var(--muted)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.upcoming{max-height:360px;overflow:auto;margin-top:10px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.list-item{display:flex;gap:10px;align-items:center;padding:8px;border-radius:10px;margin-bottom:8px;background:linear-gradient(180deg,#fff,#fbfffd);border:1px solid rgba(16,32,39,0.03)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.color-dot{width:12px;height:12px;border-radius:50%}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* modal */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.modal-backdrop{position:fixed;inset:0;background:rgba(7,12,13,0.45);display:none;align-items:center;justify-content:center;padding:20px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.modal{width:100%;max-width:520px;background:var(--card);border-radius:12px;padding:18px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.field{margin-bottom:10px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.field label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.field input,.field select,.field textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(16,32,39,0.08);font-size:14px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.flex{display:flex;gap:8px}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>footer.note{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@media(max-width:980px){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>.container{grid-template-columns:1fr;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>.right-col{position:relative}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;header class="app-header"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h1&gt;Lịch khám bệnh thú y&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;Quản lý đặt lịch và theo dõi khám chăm sóc thú nuôi&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn primary" id="addNewBtn"&gt;+ Tạo lịch&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="calendar-top"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="month-nav"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="prevBtn" aria-label="tháng trước"&gt;‹&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="month-title" id="monthTitle"&gt;Tháng — Năm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="nextBtn" aria-label="tháng sau"&gt;›&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="small"&gt;Hiện tại: &lt;span id="todayLabel"&gt;&lt;/span&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="weekdays" id="weekdays"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="grid" id="calendarGrid"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;footer class="note"&gt;Gợi ý: nhấn "Tạo lịch" hoặc nhấn nút + trên ngày để thêm cuộc hẹn nhanh.&lt;/footer&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;aside class="card right-col"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 style="margin:0"&gt;Sắp tới&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="small"&gt;Các cuộc hẹn trong 14 ngày tới&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="upcoming" id="upcomingList"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;hr style="margin:12px 0;border:0;border-top:1px solid rgba(16,32,39,0.04)"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h4 style="margin:0"&gt;Bộ lọc nhanh&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="small"&gt;Tìm theo loại thú hoặc trạng thái&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:8px" class="flex"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;select id="filterType"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;option value="all"&gt;Tất cả loại thú&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;option value="dog"&gt;Chó&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;option value="cat"&gt;Mèo&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;option value="other"&gt;Khác&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;select id="filterStatus"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;option value="all"&gt;Tất cả&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;option value="confirmed"&gt;Đã xác nhận&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;option value="pending"&gt;Chờ&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:10px" class="flex"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="clearFilter"&gt;Xóa&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn primary" id="applyFilter"&gt;Áp dụng&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/aside&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- modal --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="modal" role="document"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h3 id="modalTitle"&gt;Tạo cuộc hẹn&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="field"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label&gt;Tên chủ / người liên hệ&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input id="ownerName" type="text" placeholder="Nguyễn Văn A" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="field"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label&gt;Tên thú&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input id="petName" type="text" placeholder="Bông, Miu..." /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="field flex"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="flex:1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;label&gt;Loại thú&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;select id="petType"&gt;&lt;option value="dog"&gt;Chó&lt;/option&gt;&lt;option value="cat"&gt;Mèo&lt;/option&gt;&lt;option value="other"&gt;Khác&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="width:160px"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;label&gt;Ngày &amp; giờ&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input id="apptDatetime" type="datetime-local" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="field"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label&gt;Ghi chú&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;textarea id="notes" rows="3" placeholder="Triệu chứng, yêu cầu..."&gt;&lt;/textarea&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:13px;color:var(--muted)"&gt;Trạng thái</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;select id="status" style="margin-left:8px"&gt;&lt;option value="pending"&gt;Chờ&lt;/option&gt;&lt;option value="confirmed"&gt;Đã xác nhận&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn" id="cancelBtn"&gt;Hủy&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button class="btn primary" id="saveBtn"&gt;Lưu&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* --- Simple calendar + localStorage appointments --- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const weekdays = ['CN','T2','T3','T4','T5','T6','T7'];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const monthTitle = document.getElementById('monthTitle');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const weekdaysEl = document.getElementById('weekdays');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const grid = document.getElementById('calendarGrid');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const todayLabel = document.getElementById('todayLabel');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const upcomingList = document.getElementById('upcomingList');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const modal = document.getElementById('modalBackdrop');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const addNewBtn = document.getElementById('addNewBtn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const prevBtn = document.getElementById('prevBtn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const nextBtn = document.getElementById('nextBtn');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let view = new Date(); // current month view</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// load or init</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function loadAppointments(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try{ return JSON.parse(localStorage.getItem('vetAppts')||'[]') }catch(e){return[]}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function saveAppointments(list){ localStorage.setItem('vetAppts', JSON.stringify(list)) }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function uid(){return 'id'+Math.random().toString(36).slice(2,9)}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderWeekdays(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>weekdaysEl.innerHTML='';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>weekdays.forEach(d=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const el = document.createElement('div'); el.className='weekday'; el.textContent=d; weekdaysEl.appendChild(el);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function startOfMonth(dt){return new Date(dt.getFullYear(),dt.getMonth(),1)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function endOfMonth(dt){return new Date(dt.getFullYear(),dt.getMonth()+1,0)}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderCalendar(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>grid.innerHTML='';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const start = startOfMonth(view);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const end = endOfMonth(view);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const startWeek = start.getDay(); // 0-6 (Sun-Sat)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const total = end.getDate();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>monthTitle.textContent = view.toLocaleString('vi-VN',{month:'long',year:'numeric'});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>todayLabel.textContent = new Date().toLocaleString();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// previous month's tail</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const prevEnd = new Date(view.getFullYear(),view.getMonth(),0).getDate();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(let i = startWeek-1; i&gt;=0; i--){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const d = document.createElement('div'); d.className='day out';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dayNum = prevEnd - i;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>d.innerHTML = `&lt;div class="date"&gt;${dayNum}&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>grid.appendChild(d);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// current month</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(let d=1; d&lt;=total; d++){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const box = document.createElement('div'); box.className='day';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dateStr = new Date(view.getFullYear(),view.getMonth(),d).toISOString().slice(0,10);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box.dataset.date = dateStr;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box.innerHTML = `&lt;div class="date"&gt;${d}&lt;/div&gt;&lt;button class="add-small" title="Thêm"&gt;+&lt;/button&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box.querySelector('.add-small').addEventListener('click', (e)=&gt;{ e.stopPropagation(); openModalForDate(dateStr) });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box.addEventListener('click', ()=&gt;{ openModalForDate(dateStr) });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>grid.appendChild(box);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// next month's head to fill week</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const cells = grid.children.length;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const toAdd = (7 - (cells % 7)) % 7;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(let i=1;i&lt;=toAdd;i++){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const d = document.createElement('div'); d.className='day out'; d.innerHTML = `&lt;div class="date"&gt;${i}&lt;/div&gt;`; grid.appendChild(d);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderAppointmentsOnCalendar();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderAppointmentsOnCalendar(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const appts = loadAppointments();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// clear existing badges</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Array.from(document.querySelectorAll('.day')).forEach(node=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>Array.from(node.querySelectorAll('.appt')).forEach(n=&gt;n.remove())</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>appts.forEach(a=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const el = document.querySelector(`.day[data-date='${a.date}']`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(!el) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const item = document.createElement('span'); item.className='appt '+(a.petType==='dog'?'pet':'check');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>item.title = `${a.time} — ${a.owner} • ${a.pet}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>item.textContent = `${a.time} • ${a.pet}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>item.addEventListener('click', (e)=&gt;{ e.stopPropagation(); openModalForEdit(a.id) });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>el.appendChild(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderUpcoming();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderUpcoming(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>upcomingList.innerHTML='';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const appts = loadAppointments().slice().sort((a,b)=&gt; new Date(a.date+'T'+a.time) - new Date(b.date+'T'+b.time));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const now = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const soon = appts.filter(a=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dt = new Date(a.date+'T'+a.time);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const diff = (dt - now)/(1000*60*60*24);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return diff &gt;= -0.5 &amp;&amp; diff &lt;= 14; // from now to 14 days</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}).slice(0,20);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(soon.length===0){ upcomingList.innerHTML = '&lt;p class="small"&gt;Không có cuộc hẹn sắp tới&lt;/p&gt;'; return }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>soon.forEach(a=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const it = document.createElement('div'); it.className='list-item';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>it.innerHTML = `&lt;div style='flex:1'&gt;&lt;div style='display:flex;justify-content:space-between;align-items:center'&gt;&lt;strong&gt;${a.pet} — ${a.owner}&lt;/strong&gt;&lt;small class="small"&gt;${a.date} ${a.time}&lt;/small&gt;&lt;/div&gt;&lt;div class='small'&gt;${a.notes||''}&lt;/div&gt;&lt;/div&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>it.addEventListener('click', ()=&gt; openModalForEdit(a.id));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>upcomingList.appendChild(it);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// modal logic</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const ownerName = document.getElementById('ownerName');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const petName = document.getElementById('petName');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const petType = document.getElementById('petType');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const apptDatetime = document.getElementById('apptDatetime');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const notes = document.getElementById('notes');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const status = document.getElementById('status');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const modalTitle = document.getElementById('modalTitle');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let editingId = null;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function openModalForDate(dateStr){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>editingId = null; modalTitle.textContent='Tạo cuộc hẹn';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ownerName.value=''; petName.value=''; petType.value='dog'; notes.value=''; status.value='pending';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// default time at 09:00</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>apptDatetime.value = dateStr + 'T09:00';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>showModal();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function openModalForEdit(id){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const appts = loadAppointments();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const a = appts.find(x=&gt;x.id===id); if(!a) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>editingId = id; modalTitle.textContent='Chỉnh sửa cuộc hẹn';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ownerName.value = a.owner; petName.value = a.pet; petType.value=a.petType; notes.value=a.notes||''; status.value=a.status||'pending';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>apptDatetime.value = a.date + 'T' + a.time;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>showModal();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showModal(){ modal.style.display='flex'; modal.querySelector('.modal').focus(); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function hideModal(){ modal.style.display='none'; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('cancelBtn').addEventListener('click', hideModal);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>modal.addEventListener('click', (e)=&gt;{ if(e.target===modal) hideModal(); });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('saveBtn').addEventListener('click', ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const dt = apptDatetime.value; if(!dt){ alert('Chọn ngày và giờ'); return }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const [datePart,timePart] = dt.split('T');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const list = loadAppointments();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(editingId){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const idx = list.findIndex(x=&gt;x.id===editingId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(idx&gt;=0){ list[idx] = {...list[idx], owner:ownerName.value, pet:petName.value, petType:petType.value, date:datePart, time:timePart, notes:notes.value, status:status.value }; saveAppointments(list); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const newAppt = {id:uid(), owner:ownerName.value, pet:petName.value, petType:petType.value, date:datePart, time:timePart, notes:notes.value, status:status.value };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>list.push(newAppt); saveAppointments(list);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>hideModal(); renderAppointmentsOnCalendar();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// navigation</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>prevBtn.addEventListener('click', ()=&gt;{ view = new Date(view.getFullYear(), view.getMonth()-1,1); renderCalendar(); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>nextBtn.addEventListener('click', ()=&gt;{ view = new Date(view.getFullYear(), view.getMonth()+1,1); renderCalendar(); });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>addNewBtn.addEventListener('click', ()=&gt;{ const today = new Date(); const dateStr = today.toISOString().slice(0,10); openModalForDate(dateStr) });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// filters</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('applyFilter').addEventListener('click', ()=&gt;{ applyFilter(); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('clearFilter').addEventListener('click', ()=&gt;{ document.getElementById('filterType').value='all'; document.getElementById('filterStatus').value='all'; renderAppointmentsOnCalendar(); });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function applyFilter(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const t = document.getElementById('filterType').value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const s = document.getElementById('filterStatus').value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Array.from(document.querySelectorAll('.appt')).forEach(n=&gt; n.style.display='block');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const appts = loadAppointments();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>appts.forEach(a=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const el = document.querySelector(`.day[data-date='${a.date}']`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(!el) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const nodes = Array.from(el.querySelectorAll('.appt')).filter(x=&gt; x.title.includes(a.pet));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nodes.forEach(node=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>let hide=false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if(t!=='all' &amp;&amp; a.petType!==t) hide=true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if(s!=='all' &amp;&amp; a.status!==s) hide=true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>node.style.display = hide? 'none' : 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// initial render</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>renderWeekdays(); renderCalendar();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// accessibility: keyboard close modal with Escape</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.addEventListener('keydown', (e)=&gt;{ if(e.key==='Escape') hideModal(); });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// sample data for first run</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(loadAppointments().length===0){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const sample = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{id:uid(), owner:'Nguyễn Văn A', pet:'Bông', petType:'dog', date: new Date().toISOString().slice(0,10), time:'09:00', notes:'Tiêm phòng', status:'confirmed'},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{id:uid(), owner:'Lê Thị B', pet:'Miu', petType:'cat', date: new Date(Date.now()+86400000).toISOString().slice(0,10), time:'10:30', notes:'Kiểm tra tai', status:'pending'}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>saveAppointments(sample);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderAppointmentsOnCalendar();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
