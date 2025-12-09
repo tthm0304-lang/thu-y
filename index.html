@@ -1,1 +1,194 @@
-hhh
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Đăng ký khám bệnh thú y</title>
+  <style>
+    :root{--bg:#f6f8fa;--card:#ffffff;--accent:#2b7cff;--muted:#6b7280}
+    body{font-family:Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);margin:0;padding:24px;color:#111}
+    .container{max-width:900px;margin:0 auto}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    .card{background:var(--card);padding:20px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,.05)}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    input[type=text],input[type=email],input[type=tel],input[type=number],select,textarea,input[type=date],input[type=time]{width:100%;padding:8px;border:1px solid #e6e9ee;border-radius:6px;font-size:14px}
+    textarea{min-height:100px;resize:vertical}
+    .full{grid-column:1/ -1}
+    .row{display:flex;gap:8px}
+    .actions{display:flex;justify-content:space-between;align-items:center;margin-top:12px;grid-column:1/-1}
+    button{background:var(--accent);color:white;border:none;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer}
+    button:disabled{opacity:.6;cursor:not-allowed}
+    .muted{color:var(--muted);font-size:13px}
+    .error{color:#b91c1c;font-size:13px}
+    @media (max-width:720px){form{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Đăng ký khám bệnh thú y</h1>
+    </header>
+
+    <section class="card">
+      <form id="regForm" novalidate>
+        <fieldset class="full">
+          <legend style="font-weight:600;margin-bottom:8px">Thông tin chủ nuôi</legend>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label for="ownerName">Họ và tên *</label>
+              <input id="ownerName" name="ownerName" type="text" required />
+            </div>
+            <div>
+              <label for="ownerPhone">Số điện thoại *</label>
+              <input id="ownerPhone" name="ownerPhone" type="tel" pattern="[0-9+()\-\s]{7,}" required />
+            </div>
+            <div>
+              <label for="ownerEmail">Email</label>
+              <input id="ownerEmail" name="ownerEmail" type="email" />
+            </div>
+            <div>
+              <label for="ownerAddress">Địa chỉ</label>
+              <input id="ownerAddress" name="ownerAddress" type="text" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="full">
+          <legend style="font-weight:600;margin-bottom:8px">Thông tin thú nuôi</legend>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label for="petName">Tên thú nuôi *</label>
+              <input id="petName" name="petName" type="text" required />
+            </div>
+            <div>
+              <label for="species">Loài *</label>
+              <select id="species" name="species" required>
+                <option value="">Chọn...</option>
+                <option>Chó</option>
+                <option>Mèo</option>
+                <option>Gà</option>
+                <option>Khác</option>
+              </select>
+            </div>
+            <div>
+              <label for="breed">Giống</label>
+              <input id="breed" name="breed" type="text" />
+            </div>
+            <div>
+              <label for="age">Tuổi (năm)</label>
+              <input id="age" name="age" type="number" min="0" step="0.1" />
+            </div>
+            <div>
+              <label>Giới tính</label>
+              <div class="row">
+                <label><input type="radio" name="sex" value="Đực" /> Đực</label>
+                <label><input type="radio" name="sex" value="Cái" /> Cái</label>
+                <label><input type="radio" name="sex" value="Không rõ" checked /> Không rõ</label>
+              </div>
+            </div>
+            <div>
+              <label for="weight">Cân nặng (kg)</label>
+              <input id="weight" name="weight" type="number" min="0" step="0.1" />
+            </div>
+            <div class="full">
+              <label for="symptoms">Triệu chứng / Lý do khám *</label>
+              <textarea id="symptoms" name="symptoms" required></textarea>
+            </div>
+            <div>
+              <label for="vaccinated">Tình trạng tiêm chủng</label>
+              <select id="vaccinated" name="vaccinated">
+                <option value="">Chọn...</option>
+                <option value="yes">Đã tiêm</option>
+                <option value="no">Chưa tiêm</option>
+                <option value="unknown">Không rõ</option>
+              </select>
+            </div>
+            <div>
+              <label for="microchip">Số microchip / ID</label>
+              <input id="microchip" name="microchip" type="text" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="full">
+          <legend style="font-weight:600;margin-bottom:8px">Lịch hẹn và liên hệ khẩn</legend>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label for="apptDate">Ngày hẹn</label>
+              <input id="apptDate" name="apptDate" type="date" />
+            </div>
+            <div>
+              <label for="apptTime">Thời gian</label>
+              <input id="apptTime" name="apptTime" type="time" />
+            </div>
+            <div>
+              <label for="emergencyName">Người liên hệ khẩn</label>
+              <input id="emergencyName" name="emergencyName" type="text" />
+            </div>
+            <div>
+              <label for="emergencyPhone">SĐT liên hệ khẩn</label>
+              <input id="emergencyPhone" name="emergencyPhone" type="tel" />
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="full">
+          <label><input id="consent" name="consent" type="checkbox" required /> Tôi đồng ý cung cấp thông tin và nhận liên lạc từ phòng khám *</label>
+        </div>
+
+        <div class="actions">
+          <div class="muted">Các trường có dấu * là bắt buộc</div>
+          <div>
+            <button type="submit" id="submitBtn">Gửi đăng ký</button>
+          </div>
+        </div>
+        <div id="msg" class="full" aria-live="polite"></div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    (function(){
+      const form = document.getElementById('regForm');
+      const msg = document.getElementById('msg');
+      const submitBtn = document.getElementById('submitBtn');
+
+      function showMessage(text, isError){
+        msg.textContent = text;
+        msg.className = isError ? 'error' : 'muted';
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // simple constraint validation
+        if(!form.reportValidity()){
+          showMessage('Vui lòng hoàn tất các trường bắt buộc.', true);
+          return;
+        }
+
+        submitBtn.disabled = true;
+        showMessage('Đang gửi...');
+
+        // Simulate sending data (replace with real POST to backend)
+        const data = new FormData(form);
+        const obj = {};
+        data.forEach((v,k)=>{
+          if(obj[k] !== undefined){
+            if(!Array.isArray(obj[k])) obj[k]=[obj[k]];
+            obj[k].push(v);
+          } else obj[k]=v;
+        });
+
+        // Fake async
+        setTimeout(()=>{
+          submitBtn.disabled = false;
+          showMessage('Đăng ký đã được ghi nhận. Chúng tôi sẽ liên hệ với bạn sớm.');
+          form.reset();
+        },800);
+      });
+    })();
+  </script>
+</body>
+</html>
