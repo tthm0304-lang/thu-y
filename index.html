@@ -1,194 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Đăng ký khám bệnh thú y</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThS. Võ Thị Kiên Hảo - Giảng viên CNTP</title>
   <style>
-    :root{--bg:#f6f8fa;--card:#ffffff;--accent:#2b7cff;--muted:#6b7280}
-    body{font-family:Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);margin:0;padding:24px;color:#111}
-    .container{max-width:900px;margin:0 auto}
-    header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-    h1{font-size:20px;margin:0}
-    .card{background:var(--card);padding:20px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,.05)}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
-    input[type=text],input[type=email],input[type=tel],input[type=number],select,textarea,input[type=date],input[type=time]{width:100%;padding:8px;border:1px solid #e6e9ee;border-radius:6px;font-size:14px}
-    textarea{min-height:100px;resize:vertical}
-    .full{grid-column:1/ -1}
-    .row{display:flex;gap:8px}
-    .actions{display:flex;justify-content:space-between;align-items:center;margin-top:12px;grid-column:1/-1}
-    button{background:var(--accent);color:white;border:none;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer}
-    button:disabled{opacity:.6;cursor:not-allowed}
-    .muted{color:var(--muted);font-size:13px}
-    .error{color:#b91c1c;font-size:13px}
-    @media (max-width:720px){form{grid-template-columns:1fr}}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e7f6ff;
+      color: #222;
+    }
+    header {
+      background-color: #e7f6ff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: #d4a017;
+      font-size: 32px;
+      margin: 0;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #c8ecff;
+      padding: 12px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #0b4f80;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #d4a017;
+      border-left: 5px solid #d4a017;
+      padding-left: 10px;
+    }
+    .banner {
+      width: 100%;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      border-bottom: 5px solid #d4a017;
+    }
+    ul { line-height: 1.7; }
+    .paper-item { margin-bottom: 15px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Đăng ký khám bệnh thú y</h1>
-    </header>
+  <header>
+    <h1>ThS. Võ Thị Kiên Hảo - Giảng viên Công nghệ Thực phẩm</h1>
+  </header>
 
-    <section class="card">
-      <form id="regForm" novalidate>
-        <fieldset class="full">
-          <legend style="font-weight:600;margin-bottom:8px">Thông tin chủ nuôi</legend>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div>
-              <label for="ownerName">Họ và tên *</label>
-              <input id="ownerName" name="ownerName" type="text" required />
-            </div>
-            <div>
-              <label for="ownerPhone">Số điện thoại *</label>
-              <input id="ownerPhone" name="ownerPhone" type="tel" pattern="[0-9+()\-\s]{7,}" required />
-            </div>
-            <div>
-              <label for="ownerEmail">Email</label>
-              <input id="ownerEmail" name="ownerEmail" type="email" />
-            </div>
-            <div>
-              <label for="ownerAddress">Địa chỉ</label>
-              <input id="ownerAddress" name="ownerAddress" type="text" />
-            </div>
-          </div>
-        </fieldset>
+  <div class="banner" style="background-image: url('banner.jpg');"></div>
 
-        <fieldset class="full">
-          <legend style="font-weight:600;margin-bottom:8px">Thông tin thú nuôi</legend>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div>
-              <label for="petName">Tên thú nuôi *</label>
-              <input id="petName" name="petName" type="text" required />
-            </div>
-            <div>
-              <label for="species">Loài *</label>
-              <select id="species" name="species" required>
-                <option value="">Chọn...</option>
-                <option>Chó</option>
-                <option>Mèo</option>
-                <option>Gà</option>
-                <option>Khác</option>
-              </select>
-            </div>
-            <div>
-              <label for="breed">Giống</label>
-              <input id="breed" name="breed" type="text" />
-            </div>
-            <div>
-              <label for="age">Tuổi (năm)</label>
-              <input id="age" name="age" type="number" min="0" step="0.1" />
-            </div>
-            <div>
-              <label>Giới tính</label>
-              <div class="row">
-                <label><input type="radio" name="sex" value="Đực" /> Đực</label>
-                <label><input type="radio" name="sex" value="Cái" /> Cái</label>
-                <label><input type="radio" name="sex" value="Không rõ" checked /> Không rõ</label>
-              </div>
-            </div>
-            <div>
-              <label for="weight">Cân nặng (kg)</label>
-              <input id="weight" name="weight" type="number" min="0" step="0.1" />
-            </div>
-            <div class="full">
-              <label for="symptoms">Triệu chứng / Lý do khám *</label>
-              <textarea id="symptoms" name="symptoms" required></textarea>
-            </div>
-            <div>
-              <label for="vaccinated">Tình trạng tiêm chủng</label>
-              <select id="vaccinated" name="vaccinated">
-                <option value="">Chọn...</option>
-                <option value="yes">Đã tiêm</option>
-                <option value="no">Chưa tiêm</option>
-                <option value="unknown">Không rõ</option>
-              </select>
-            </div>
-            <div>
-              <label for="microchip">Số microchip / ID</label>
-              <input id="microchip" name="microchip" type="text" />
-            </div>
-          </div>
-        </fieldset>
+  <nav>
+    <a href="#gioithieu">Giới thiệu</a>
+    <a href="#giangday">Giảng dạy</a>
+    <a href="#baibao">Bài báo</a>
+    <a href="#detai">Đề tài</a>
+  </nav>
 
-        <fieldset class="full">
-          <legend style="font-weight:600;margin-bottom:8px">Lịch hẹn và liên hệ khẩn</legend>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div>
-              <label for="apptDate">Ngày hẹn</label>
-              <input id="apptDate" name="apptDate" type="date" />
-            </div>
-            <div>
-              <label for="apptTime">Thời gian</label>
-              <input id="apptTime" name="apptTime" type="time" />
-            </div>
-            <div>
-              <label for="emergencyName">Người liên hệ khẩn</label>
-              <input id="emergencyName" name="emergencyName" type="text" />
-            </div>
-            <div>
-              <label for="emergencyPhone">SĐT liên hệ khẩn</label>
-              <input id="emergencyPhone" name="emergencyPhone" type="tel" />
-            </div>
-          </div>
-        </fieldset>
+  <section id="gioithieu">
+    <h2>Giới thiệu</h2>
+    <p>Thạc sĩ chuyên ngành Công nghệ thực phẩm, Khoa Sinh học ứng dụng, Trường Đại học Tây Đô.</p>
+    <p><strong>Điện thoại:</strong> 0982829739</p>
+    <p><strong>Email:</strong> vtkhao@tdu.edu.vn</p>
+  </section>
 
-        <div class="full">
-          <label><input id="consent" name="consent" type="checkbox" required /> Tôi đồng ý cung cấp thông tin và nhận liên lạc từ phòng khám *</label>
-        </div>
+  <section id="giangday">
+    <h2>Giảng dạy</h2>
+    <ul>
+      <li><strong>Công nghệ lạnh thực phẩm</strong>
+        <p>Tính Bi = (h × a) / k</p>
+        <p>Tính toán hệ số nhiệt độ, tra Fo từ đồ thị.</p>
+        <p>t = (Fo × Cp × ρ × a²) / k &nbsp;(đơn vị: giây)</p>
+      </li>
+      <li><strong>Công nghệ chế biến đường và bánh kẹo</strong>
+        <p>Có sử dụng hình ảnh minh họa.</p>
+      </li>
+      <li><strong>Công nghệ chế biến thủy – hải sản</strong>
+        <p>RRS cá ôn đới = (1 + 0,1T)²</p>
+        <p>Bảo quản(t°C) = BQ(0°C) / RRS</p>
+        <p>Đối với cá nhiệt đới: ln(RRS) = 0,12 × t</p>
+      </li>
+    </ul>
+  </section>
 
-        <div class="actions">
-          <div class="muted">Các trường có dấu * là bắt buộc</div>
-          <div>
-            <button type="submit" id="submitBtn">Gửi đăng ký</button>
-          </div>
-        </div>
-        <div id="msg" class="full" aria-live="polite"></div>
-      </form>
-    </section>
-  </div>
+  <section id="baibao">
+    <h2>Bài báo khoa học</h2>
+    <p>Google Scholar: <a href="https://scholar.google.com/citations?user=-8ScGKYAAAAJ&hl=vi" target="_blank">Xem tại đây</a></p>
 
-  <script>
-    (function(){
-      const form = document.getElementById('regForm');
-      const msg = document.getElementById('msg');
-      const submitBtn = document.getElementById('submitBtn');
+    <div class="paper-item">
+      <strong>Tuyển chọn dòng nấm men từ thanh long ruột đỏ</strong> – 2025
+    </div>
 
-      function showMessage(text, isError){
-        msg.textContent = text;
-        msg.className = isError ? 'error' : 'muted';
-      }
+    <div class="paper-item">
+      <strong>Ảnh hưởng chất khô hòa tan & pH đến lên men rượu chuối</strong> – 2025
+    </div>
 
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        // simple constraint validation
-        if(!form.reportValidity()){
-          showMessage('Vui lòng hoàn tất các trường bắt buộc.', true);
-          return;
-        }
+    <div class="paper-item">
+      <strong>Đánh giá hoạt lực lên men nấm men thanh long ruột trắng</strong> – 2025
+    </div>
 
-        submitBtn.disabled = true;
-        showMessage('Đang gửi...');
+    <div class="paper-item">
+      <strong>Nghiên cứu sản xuất bột nhàu và ứng dụng</strong> – 2025
+    </div>
 
-        // Simulate sending data (replace with real POST to backend)
-        const data = new FormData(form);
-        const obj = {};
-        data.forEach((v,k)=>{
-          if(obj[k] !== undefined){
-            if(!Array.isArray(obj[k])) obj[k]=[obj[k]];
-            obj[k].push(v);
-          } else obj[k]=v;
-        });
+    <div class="paper-item">
+      <strong>Ảnh hưởng bột vỏ lựu lên chất lượng bánh cupcake</strong>
+    </div>
+  </section>
 
-        // Fake async
-        setTimeout(()=>{
-          submitBtn.disabled = false;
-          showMessage('Đăng ký đã được ghi nhận. Chúng tôi sẽ liên hệ với bạn sớm.');
-          form.reset();
-        },800);
-      });
-    })();
-  </script>
+  <section id="detai">
+    <h2>Đề tài nghiên cứu</h2>
+    <ul>
+      <li>Chủ nhiệm: Nghiên cứu chế biến chả cá rô phi bổ sung lòng trắng trứng gà.</li>
+      <li>Nghiên cứu chế biến chả cá rô phi chiên.</li>
+      <li>Phân lập và tuyển chọn nấm men chịu nhiệt – ethanol cho rượu vang thanh long.</li>
+      <li>Khảo sát sản xuất rượu vang chuối già cui.</li>
+    </ul>
+  </section>
+
 </body>
 </html>
+
